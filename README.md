@@ -1,10 +1,9 @@
 # Project setup
 
 ## Pre-requisites
-<br>
-### 1. Install Node.js
+1. Install Node.js
 
-Install Node.js, we will use NPM to install dependencies, (latest version is 16.14.2 LTS or 18.0.0 Current) see link below:
+Install Node.js, we will use NPM to install dependencies, see link below:
 
 [Download Node.js](https://www.nodejs.org/en/)
 <br>
@@ -13,7 +12,7 @@ Install Node.js, we will use NPM to install dependencies, (latest version is 16.
 ## Clone repository from Github
 
 ## Install project dependencies
-<br>
+
 
 1. Open Visual Studio Code, then open `Terminal` → `New Terminal` on the Main Menu
 
@@ -25,19 +24,18 @@ Install Node.js, we will use NPM to install dependencies, (latest version is 16.
     ```
     npm install
     ```
-4. After `npm install`, you should have new folder `node_modules` added on the left pane of Visual Studio Code
+4. After `npm install`, you should have new folder `node_modules` added
 
 5. If there is any module or library that needs to be updated, you may update them using `npm update`
     ```
     npm update
     ```
-<br>
 
 ## Run app
-    ```
-    npm run serve
-    ```
 
+```shell
+npm run serve
+```
 
 The application should then be available on port 8081:
 
