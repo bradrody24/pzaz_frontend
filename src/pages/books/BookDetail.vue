@@ -1,18 +1,21 @@
 <template>
   <section>
     <BaseCard>
-      <div class="container">
-        <img
-          class="center"
-          :src="`${books_env.base_url}${image}`"
-          :alt="title"
-        />
+      <div v-if="selectedBook">
+        <div class="container">
+          <img
+            class="center"
+            :src="`${books_env.base_url}${image}`"
+            :alt="title"
+          />
+        </div>
+        <h3>{{ title }}</h3>
+        <h4>{{ description }}</h4>
+        <div class="actions">
+          <BaseButton link :to="bookEditLink">Update</BaseButton>
+        </div>
       </div>
-      <h3>{{ title }}</h3>
-      <h4>{{ description }}</h4>
-      <div class="actions">
-        <BaseButton link :to="bookEditLink">Update</BaseButton>
-      </div>
+      <h3 v-else>No books found.</h3>
     </BaseCard>
   </section>
 </template>
@@ -40,7 +43,12 @@ export default {
       return '/books/edit/' + this.id;
     },
     selectedBook() {
-      return this.books.find((book) => book.id == this.id);
+      const record = this.books.find((book) => book.id == this.id);
+      if (record) {
+        return record;
+      } else {
+        return null;
+      }
     },
   },
 };
